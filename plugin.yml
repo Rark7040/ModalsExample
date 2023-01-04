@@ -1,0 +1,7 @@
+name: ModalsExample
+version: 1.0.0
+main: rarkhopper\modals_example\ModalsExamplePlugin
+api: 4.0.0
+author: RarkHopper
+virions:
+  - Modals
