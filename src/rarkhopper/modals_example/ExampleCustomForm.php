@@ -15,6 +15,8 @@ use rarkhopper\modals\custom\element\Label;
 use rarkhopper\modals\custom\element\Slider;
 use rarkhopper\modals\custom\element\StepSlider;
 use rarkhopper\modals\custom\element\Toggle;
+use function var_dump;
+use const PHP_EOL;
 
 class ExampleCustomForm extends CustomFormBase{
 
@@ -34,7 +36,14 @@ class ExampleCustomForm extends CustomFormBase{
 	}
 
 	protected function onSubmit(Player $player, CustomFormResponse $response) : void{
-		var_dump($response->getAllResponse());
-		var_dump($response->getRawResponse());
+		foreach($response->getAllResponse() as $key => $res){
+			echo '[Response] ' . $key . ' ';
+			var_dump($res);
+		}
+
+		foreach($response->getRawResponse() as $key => $res){
+			echo '[Raw]' . $key . ' ';
+			var_dump($res);
+		}
 	}
 }
